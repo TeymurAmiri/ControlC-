@@ -9,3 +9,24 @@ firstArray = array.Split(' ');
 
 Console.Write($"Начальный массив -> ");
 Console.WriteLine(string.Join(' ', firstArray));
+
+string[] secondArray = new string[firstArray.Length];
+CreatSecondArray(firstArray, secondArray);
+
+Console.Write($"Итоговый массив -> ");
+Console.Write(string.Join(' ', secondArray));
+
+
+
+void CreatSecondArray(string[] array1, string[] array2)
+{
+    int digit = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+        if (array1[i].Length <= 3)
+        {
+            array2[digit] = array1[i];
+            digit++;
+        }
+    }
+}
